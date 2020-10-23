@@ -3,9 +3,10 @@
     <div class="cat-container">
       <canvas
         id="vuepress-cat"
-        :width="style.width"
-        :height="style.height"
+        width="200"
+        height="250"
         class="live2d"
+        :style="style"
       ></canvas>
     </div>
     <router-view />
@@ -22,10 +23,7 @@
         model: {
           whiteCat: '/live2d/cat/tororo.model.json'
         },
-        style: {
-          width: 200,
-          height: 250
-        }
+        style: null
       };
     },
     computed: {
@@ -43,10 +41,7 @@
         )
           ? true
           : false;
-        if (isMobile) {
-          this.style.width = 100;
-          this.style.height = 120;
-        }
+        if (isMobile)  this.style = { width: '100px', height: '125px' }
         if (!window.loadlive2d) {
           const script = document.createElement('script');
           script.innerHTML = live2dJSString;
