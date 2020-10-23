@@ -3,8 +3,8 @@
     <div class="cat-container">
       <canvas
         id="vuepress-cat"
-        width="200"
-        height="250"
+        width="400"
+        height="500"
         class="live2d"
         :style="style"
       ></canvas>
@@ -41,7 +41,8 @@
         )
           ? true
           : false;
-        if (isMobile)  this.style = { width: '100px', height: '125px' }
+        if (isMobile)  this.style = { width: '100px', height: '125px' };
+        else this.style = { width: '200px', height: '250px' };
         if (!window.loadlive2d) {
           const script = document.createElement('script');
           script.innerHTML = live2dJSString;
