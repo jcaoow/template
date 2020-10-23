@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div class="center-all">111</div>
     <div class="cat-container">
       <canvas
         id="vuepress-cat"
@@ -59,7 +60,9 @@
   };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+  @import url('./assets/css/common.less');
+
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -73,6 +76,7 @@
     right: 50px;
     bottom: 100px;
     color: #00adb5;
+    z-index: 99999;
     #vuepress-cat {
       position: fixed;
       opacity: 0.9;
